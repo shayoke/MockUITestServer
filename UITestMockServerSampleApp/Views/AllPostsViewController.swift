@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import Mockingjay
 
-class ViewController: UIViewController {
-    @IBOutlet private weak var environmentChooser: UISegmentedControl!
+final class AllPostsViewController: UIViewController {
     @IBOutlet private weak var debuggingLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -24,13 +22,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupTableView()
     }
     
     private func setupTableView() {
         tableView.layer.cornerRadius = 4.0
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
     }
@@ -48,7 +46,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension AllPostsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
@@ -65,6 +63,19 @@ extension ViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension AllPostsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PostDetailViewController") as! PostDetailsViewController
+        
+        let post = posts[indexPath.row]
+        vc.viewModel = post
+        
+        navigationController?.pushViewController(vc, animated: true)
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B043CA222ED2820005BE0F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B043CA122ED2820005BE0F0 /* AppDelegate.swift */; };
-		0B043CA422ED2820005BE0F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B043CA322ED2820005BE0F0 /* ViewController.swift */; };
+		0B043CA422ED2820005BE0F0 /* AllPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B043CA322ED2820005BE0F0 /* AllPostsViewController.swift */; };
 		0B043CA722ED2820005BE0F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B043CA522ED2820005BE0F0 /* Main.storyboard */; };
 		0B043CA922ED2821005BE0F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B043CA822ED2821005BE0F0 /* Assets.xcassets */; };
 		0B043CAC22ED2821005BE0F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B043CAA22ED2821005BE0F0 /* LaunchScreen.storyboard */; };
@@ -24,8 +24,7 @@
 		0B043DDA22EE2AC8005BE0F0 /* WebserverMessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B043DD922EE2AC8005BE0F0 /* WebserverMessageService.swift */; };
 		0B043DDC22EE2B15005BE0F0 /* MockServerInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B043DDB22EE2B15005BE0F0 /* MockServerInstructions.swift */; };
 		0B043DDF22EE2B82005BE0F0 /* MockServerInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B043DDB22EE2B15005BE0F0 /* MockServerInstructions.swift */; };
-		0B043DE022EE2DE0005BE0F0 /* WebserverMessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B043DD922EE2AC8005BE0F0 /* WebserverMessageService.swift */; };
-		0B043DE122F0E9DC005BE0F0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B043DCF22EDD1CE005BE0F0 /* Post.swift */; };
+		0B043DE322F22565005BE0F0 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B043DE222F22564005BE0F0 /* PostDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +83,7 @@
 /* Begin PBXFileReference section */
 		0B043C9E22ED2820005BE0F0 /* UITestMockServerSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITestMockServerSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B043CA122ED2820005BE0F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B043CA322ED2820005BE0F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B043CA322ED2820005BE0F0 /* AllPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPostsViewController.swift; sourceTree = "<group>"; };
 		0B043CA622ED2820005BE0F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B043CA822ED2821005BE0F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B043CAB22ED2821005BE0F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		0B043DCF22EDD1CE005BE0F0 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0B043DD922EE2AC8005BE0F0 /* WebserverMessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserverMessageService.swift; sourceTree = "<group>"; };
 		0B043DDB22EE2B15005BE0F0 /* MockServerInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServerInstructions.swift; sourceTree = "<group>"; };
+		0B043DE222F22564005BE0F0 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,7 +226,8 @@
 		0B043DDE22EE2B47005BE0F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0B043CA322ED2820005BE0F0 /* ViewController.swift */,
+				0B043CA322ED2820005BE0F0 /* AllPostsViewController.swift */,
+				0B043DE222F22564005BE0F0 /* PostDetailViewController.swift */,
 				0B043CA522ED2820005BE0F0 /* Main.storyboard */,
 			);
 			path = Views;
@@ -388,10 +389,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B043DE022EE2DE0005BE0F0 /* WebserverMessageService.swift in Sources */,
 				0B043DD022EDD1CE005BE0F0 /* NetworkManager.swift in Sources */,
+				0B043DE322F22565005BE0F0 /* PostDetailViewController.swift in Sources */,
 				0B043DDC22EE2B15005BE0F0 /* MockServerInstructions.swift in Sources */,
-				0B043CA422ED2820005BE0F0 /* ViewController.swift in Sources */,
+				0B043CA422ED2820005BE0F0 /* AllPostsViewController.swift in Sources */,
 				0B043CA222ED2820005BE0F0 /* AppDelegate.swift in Sources */,
 				0B043DC322ED333A005BE0F0 /* WebServer.swift in Sources */,
 				0B043DD122EDD1CE005BE0F0 /* Post.swift in Sources */,
@@ -413,7 +414,6 @@
 				0B043DDA22EE2AC8005BE0F0 /* WebserverMessageService.swift in Sources */,
 				0B043DDF22EE2B82005BE0F0 /* MockServerInstructions.swift in Sources */,
 				0B043CC222ED2821005BE0F0 /* UITestMockServerSampleAppUITests.swift in Sources */,
-				0B043DE122F0E9DC005BE0F0 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

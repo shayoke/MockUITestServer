@@ -40,7 +40,7 @@ class WebServer {
         ipAddress = webServer.serverURL?.absoluteString ?? ""
     }
     
-    var defaultProcessBlock: GCDWebServerProcessBlock {
+    private var defaultProcessBlock: GCDWebServerProcessBlock {
         return { [weak self] request in
 
             let path = request.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
@@ -57,24 +57,19 @@ class WebServer {
                     let message: String
                 }
                 
-                let reponse = MockServerResponse(message: "successful")
+                let reponse = MockServerResponse(message: result ? "successful" : "stub failed")
                 let jsonData = try! JSONEncoder().encode(reponse)
                 let json = String(data: jsonData, encoding: .utf8)!
                 print(json)
 
                 return GCDWebServerDataResponse.init(data: jsonData, contentType: "application/json")
-                
-
-                
-//                return GCDWebServerDataResponse(text: "[ \"successful\" ]")
             }
             
             return GCDWebServerDataResponse(text: "ERROR: Unable to parse path.")
         }
     }
     
-    
-    func stubGETRequest(_ request: StubGETRequest) -> Bool {
+    private func stubGETRequest(_ request: StubGETRequest) -> Bool {
         request.run()
         return true
     }    

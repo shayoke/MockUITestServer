@@ -13,23 +13,13 @@
         <!--All Posts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UITestMockServerSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AllPostsViewController" customModule="UITestMockServerSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ycG-tP-QT4">
-                                <rect key="frame" x="16" y="120" width="382" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="Ibl-DE-Zx1"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Live"/>
-                                    <segment title="MockServer"/>
-                                </segments>
-                            </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjf-qQ-wcq">
-                                <rect key="frame" x="20" y="155" width="378" height="76"/>
+                                <rect key="frame" x="20" y="120" width="378" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbs-22-n83">
                                         <rect key="frame" x="0.0" y="0.0" width="189" height="76"/>
@@ -50,7 +40,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" estimatedRowHeight="15" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8hc-rY-4Tj">
-                                <rect key="frame" x="20" y="239" width="374" height="611"/>
+                                <rect key="frame" x="20" y="204" width="374" height="646"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="98" id="imn-1S-9ch" customClass="PostCell" customModule="UITestMockServerSampleApp" customModuleProvider="target">
@@ -105,14 +95,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cjf-qQ-wcq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4hd-Bm-MIY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ycG-tP-QT4" secondAttribute="trailing" constant="16" id="795-zJ-hxe"/>
-                            <constraint firstItem="cjf-qQ-wcq" firstAttribute="top" secondItem="ycG-tP-QT4" secondAttribute="bottom" constant="8" id="Lle-w4-EKP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8hc-rY-4Tj" secondAttribute="bottom" constant="12" id="P6I-MZ-yev"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cjf-qQ-wcq" secondAttribute="trailing" constant="16" id="S8b-eX-A3p"/>
-                            <constraint firstItem="ycG-tP-QT4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TAM-Zl-iVd"/>
                             <constraint firstItem="8hc-rY-4Tj" firstAttribute="top" secondItem="cjf-qQ-wcq" secondAttribute="bottom" constant="8" id="VFD-4j-cSH"/>
+                            <constraint firstItem="cjf-qQ-wcq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="cQb-hT-D8k"/>
                             <constraint firstItem="8hc-rY-4Tj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jg2-sN-E0y"/>
-                            <constraint firstItem="ycG-tP-QT4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="lSg-Aw-CeE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8hc-rY-4Tj" secondAttribute="trailing" constant="20" id="qKI-Jd-Cuc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -120,7 +107,6 @@
                     <navigationItem key="navigationItem" title="All Posts" id="uLE-5Q-N7k"/>
                     <connections>
                         <outlet property="debuggingLabel" destination="Kbs-22-n83" id="fjY-ZW-AJX"/>
-                        <outlet property="environmentChooser" destination="ycG-tP-QT4" id="9f6-CH-dal"/>
                         <outlet property="tableView" destination="8hc-rY-4Tj" id="qbO-qA-KYw"/>
                     </connections>
                 </viewController>
@@ -131,7 +117,7 @@
         <!--Post-->
         <scene sceneID="kgY-ds-EyP">
             <objects>
-                <viewController title="Post" id="UNi-Ei-5xx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostDetailViewController" title="Post" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UNi-Ei-5xx" customClass="PostDetailsViewController" customModule="UITestMockServerSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xnV-ut-Kr2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,6 +163,12 @@
                         <viewLayoutGuide key="safeArea" id="Ldc-qx-59S"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="bodyLabel" destination="UG5-uS-8qU" id="Lin-W1-TjX"/>
+                        <outlet property="footerLabel" destination="WD1-Iy-Vfe" id="j4s-09-D7v"/>
+                        <outlet property="idLabel" destination="DxX-fU-W7T" id="lNz-3v-cjY"/>
+                        <outlet property="titleLabel" destination="emm-Hh-5ze" id="HSB-vO-NKn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GF-Hw-iv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

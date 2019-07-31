@@ -28,9 +28,9 @@ public class NetworkManager {
         return URLRequest(url: url)
     }
     
-    private func callNetwork(session: URLSession = .shared,
+    private func callNetwork<T: Decodable>(session: URLSession = .shared,
                                    path: String,
-                                   result: @escaping (Result<[Post], Error>) -> Void) {
+                                   result: @escaping (Result<T, Error>) -> Void) {
         
         guard let request = buildURLRequest(from: path) else {
             result(.failure(NetworkError.badPath))
@@ -49,7 +49,7 @@ public class NetworkManager {
             }
             
             do {
-                let decodedResponse = try self.decoder.decode([Post].self, from: data)
+                let decodedResponse = try self.decoder.decode(T.self, from: data)
                 result(.success(decodedResponse))
             } catch let error as DecodingError {
                 result(.failure(NetworkError.decodingError(error)))
@@ -60,17 +60,11 @@ public class NetworkManager {
 
         task.resume()
     }
-    
 }
 
 public extension NetworkManager {
     func fetchPosts(result: @escaping (Result<[Post], Error>) -> Void) {
-        callNetwork(path: "/posts/") { (networkResult: Result<[Post], Error>) in
-            switch networkResult {
-            case .success(let post): result(.success(post))
-            case .failure(let error):  result(.failure(error))
-            }
-        }
+        callNetwork(path: "/posts/", result: result)
     }
 }
 

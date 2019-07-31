@@ -27,9 +27,6 @@ class TestServerHost {
                         headers: [String: String]? = nil,
                         onComplete: @escaping () -> Void) {
         
-        
-//        let responseData = try! JSONEncoder().encode(response)
-
         let requestObject = StubGETRequest(path: path, response: response, status: status, headers: headers)
         sendMockserverMessage(to: StubGETRequest.mockServerMessage, instruction: requestObject, onComplete: onComplete)
     }
@@ -60,12 +57,10 @@ class TestServerHost {
         
         request.httpBody = try! JSONEncoder().encode(instruction)
         
-        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+        let task = URLSession.shared.dataTask(with: request) { _, _, _ in
             onComplete()
         }
         
         task.resume()
     }
-    
-    
 }
