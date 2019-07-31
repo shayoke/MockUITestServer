@@ -19,7 +19,6 @@ public func everything(_ request: URLRequest) -> Bool {
 public func uri(_ uri:String) -> (_ request: URLRequest) -> Bool {
   
   return { (request:URLRequest) in
-    return true
     let template = URITemplate(template:uri)
     
     if let URLString = request.url?.absoluteString {

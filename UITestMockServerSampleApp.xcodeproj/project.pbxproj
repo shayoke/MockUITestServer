@@ -135,11 +135,11 @@
 		0B043C9522ED2820005BE0F0 = {
 			isa = PBXGroup;
 			children = (
-				0B043D2F22ED3081005BE0F0 /* GCDWebServers.framework */,
 				0B043CA022ED2820005BE0F0 /* UITestMockServerSampleApp */,
 				0B043CB522ED2821005BE0F0 /* UITestMockServerSampleAppTests */,
 				0B043CC022ED2821005BE0F0 /* UITestMockServerSampleAppUITests */,
 				0B043C9F22ED2820005BE0F0 /* Products */,
+				0B043D2F22ED3081005BE0F0 /* GCDWebServers.framework */,
 				0B043CFC22ED28A1005BE0F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
