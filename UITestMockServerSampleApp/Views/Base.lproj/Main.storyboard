@@ -84,7 +84,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <connections>
-                                            <outlet property="bodyLabel" destination="n5a-HS-U9D" id="qpf-hb-Hhu"/>
+                                            <outlet property="bodyLabel" destination="n5a-HS-U9D" id="9T0-ax-qKK"/>
                                             <outlet property="idLabel" destination="Yo3-Oq-lcc" id="iOC-d0-eDQ"/>
                                             <outlet property="titleLabel" destination="HC6-fJ-p4O" id="LdX-Hi-jEa"/>
                                         </connections>

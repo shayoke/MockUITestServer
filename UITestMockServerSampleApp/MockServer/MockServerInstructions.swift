@@ -9,11 +9,6 @@
 import Foundation
 import Mockingjay
 
-struct CodableMatcher: Codable {
-    let method: String
-    let uri: String
-}
-
 protocol StubRequest {
     static var mockServerMessage: String { get }
     func run()
@@ -29,16 +24,5 @@ struct StubGETRequest: Codable, StubRequest {
     func run() {
         dump(self)
         Stubber().stub(uri(path), jsonData(response, status: status, headers: headers))
-    }
-}
-
-struct StubPOSTRequest: Codable, StubRequest {
-    static let mockServerMessage = "stubPOSTRequest"
-    let path: String
-    let response: String
-    let status: Int
-    let headers: [String: String]?
-    
-    func run() {
     }
 }
