@@ -9,17 +9,8 @@
 import Foundation
 
 class TestServerHost {
-    static let shared = TestServerHost()
-    
+    public static let shared = TestServerHost()
     private init() {}
-    
-    public func startStubServer(onComplete: @escaping () -> Void) {
-        
-    }
-    
-    public func stopStubServer(onComplete: @escaping () -> Void) {
-        
-    }
     
     func stubGETRequest(with path: String,
                         response: Data,
@@ -30,20 +21,7 @@ class TestServerHost {
         let requestObject = StubGETRequest(path: path, response: response, status: status, headers: headers)
         sendMockserverMessage(to: StubGETRequest.mockServerMessage, instruction: requestObject, onComplete: onComplete)
     }
-    
-    func stubRequests(with path: String, error: Error, onComplete: @escaping () -> Void) {
-        
-    }
-    
-    func killNetwork(onComplete: @escaping () -> Void) {
-        
-    }
-    
-    func reviveNetwork(onComplete: @escaping () -> Void) {
-        
-    }
-    
-    
+
     func sendMockserverMessage<T: Encodable>(to path: String, instruction: T, onComplete: @escaping () -> Void) {
         var components = URLComponents()
         components.scheme = "http"
